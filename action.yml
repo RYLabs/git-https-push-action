@@ -11,10 +11,13 @@ inputs:
   skipHooks:
     description: 'Skip git hooks with --no-verify'
     default: false
+  sshPrivateKey:
+    description: 'Private key to remote repository'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
     SKIP_HOOKS: ${{ inputs.skipHooks }}
+    SSH_PRIVATE_KEY: ${{ inputs.sshPrivateKey }}
   args:
     - ${{ inputs.remoteUrl }}
