@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-RUN apk add -U bash git dos2unix
+RUN apk add -U bash git dos2unix openssh-client
 
 COPY LICENSE README.md /
 
